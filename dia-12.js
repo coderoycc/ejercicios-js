@@ -1,3 +1,4 @@
+
 function dia12(distancia, trineos){
     let vector = []
     trineos.forEach((elemento, index) =>{
