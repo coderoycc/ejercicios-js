@@ -21,29 +21,29 @@ carryGifts(['game', 'bike', 'book', 'toy'], 7)
 // el tercer saco lleva 'book' y 'toy' que pesan 4kg y 3kg
 */
 function dia17(vec, mayor){
-    if (!vec.every(regalo => mayor >= regalo.length)) {
-        return []
+  if (!vec.every(regalo => mayor >= regalo.length)) {
+      return []
+  }
+  let res = []
+  let cadena=''
+  let i = 0
+  let longitud = 0
+  while(i < vec.length){ //En caso de que todos los regalos sean menores que el 'mayor' limite de peso
+    console.log('Iteramos ',vec[i])
+    if(longitud + vec[i].length <= mayor){
+      cadena = cadena + vec[i] + ' '
+      longitud = longitud + vec[i].length
+      console.log(i,'>>>',longitud)
+      i++
+    }else{
+      res.push(cadena.substr(0,cadena.length - 1))
+      cadena = ''
+      longitud = 0
     }
-    let res = []
-    let cadena=''
-    let i = 0
-    let longitud = 0
-    while(i < vec.length){ //En caso de que todos los regalos sean menores que el 'mayor' limite de peso
-        console.log('Iteramos ',vec[i])
-        if(longitud + vec[i].length <= mayor){
-            cadena = cadena + vec[i] + ' '
-            longitud = longitud + vec[i].length
-            console.log(i,'>>>',longitud)
-            i++
-        }else{
-            res.push(cadena.substr(0,cadena.length - 1))
-            cadena = ''
-            longitud = 0
-        }
-    }
-    if(cadena!=''){
-        res.push(cadena.substr(0,cadena.length - 1))
-    }
-    console.log(res)
+  }
+  if(cadena!=''){
+    res.push(cadena.substr(0,cadena.length - 1))
+  }
+  console.log(res)
 }
 dia17(['toy', 'toy', 'disk', 'disk', 'toy', 'toy'], 7)
