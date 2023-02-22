@@ -6,6 +6,7 @@ A la máquina se le pasa un array con los regalos. Cada regalo es un string. Nec
 
 El papel de regalo es el símbolo * y para envolver un regalo se coloca el símbolo * de forma que rodee totalmente al string por todos los lados.
 */
+
 function wrapping(gifts) {
   let envueltos = [];
   gifts.forEach( x => {
